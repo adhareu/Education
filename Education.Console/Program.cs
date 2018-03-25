@@ -11,6 +11,7 @@ namespace Education.Console
         static void Main(string[] args)
         {
             var a = "a";
+            var b = "b";
         }
     }
 }
