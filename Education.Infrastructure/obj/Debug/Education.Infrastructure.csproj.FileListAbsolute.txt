@@ -1,0 +1,28 @@
+H:\Project Coll\Asset_Sln\Asset.Infrastructure\bin\Debug\Education.Infrastructure.dll.config
+H:\Project Coll\Asset_Sln\Asset.Infrastructure\bin\Debug\Education.Infrastructure.dll
+H:\Project Coll\Asset_Sln\Asset.Infrastructure\bin\Debug\Education.Infrastructure.pdb
+H:\Project Coll\Asset_Sln\Asset.Infrastructure\bin\Debug\EntityFramework.dll
+H:\Project Coll\Asset_Sln\Asset.Infrastructure\bin\Debug\EntityFramework.SqlServer.dll
+H:\Project Coll\Asset_Sln\Asset.Infrastructure\bin\Debug\EntityFramework.xml
+H:\Project Coll\Asset_Sln\Asset.Infrastructure\bin\Debug\EntityFramework.SqlServer.xml
+H:\Project Coll\Asset_Sln\Asset.Infrastructure\obj\Debug\Education.Infrastructure.dll
+H:\Project Coll\Asset_Sln\Asset.Infrastructure\obj\Debug\Education.Infrastructure.pdb
+H:\Project Coll\Education_Sln\Education.Infrastructure\bin\Debug\Education.Infrastructure.dll.config
+H:\Project Coll\Education_Sln\Education.Infrastructure\bin\Debug\Education.Infrastructure.dll
+H:\Project Coll\Education_Sln\Education.Infrastructure\bin\Debug\Education.Infrastructure.pdb
+H:\Project Coll\Education_Sln\Education.Infrastructure\bin\Debug\EntityFramework.dll
+H:\Project Coll\Education_Sln\Education.Infrastructure\bin\Debug\EntityFramework.SqlServer.dll
+H:\Project Coll\Education_Sln\Education.Infrastructure\bin\Debug\EntityFramework.xml
+H:\Project Coll\Education_Sln\Education.Infrastructure\bin\Debug\EntityFramework.SqlServer.xml
+H:\Project Coll\Education_Sln\Education.Infrastructure\obj\Debug\Education.Infrastructure.dll
+H:\Project Coll\Education_Sln\Education.Infrastructure\obj\Debug\Education.Infrastructure.pdb
+H:\Project Coll\Education_Sln\Education.Infrastructure\obj\Debug\Education.Infrastructure.csprojResolveAssemblyReference.cache
+F:\Asif\Education_Sln\Education.Infrastructure\bin\Debug\Education.Infrastructure.dll.config
+F:\Asif\Education_Sln\Education.Infrastructure\bin\Debug\Education.Infrastructure.dll
+F:\Asif\Education_Sln\Education.Infrastructure\bin\Debug\Education.Infrastructure.pdb
+F:\Asif\Education_Sln\Education.Infrastructure\bin\Debug\EntityFramework.dll
+F:\Asif\Education_Sln\Education.Infrastructure\bin\Debug\EntityFramework.SqlServer.dll
+F:\Asif\Education_Sln\Education.Infrastructure\bin\Debug\EntityFramework.xml
+F:\Asif\Education_Sln\Education.Infrastructure\bin\Debug\EntityFramework.SqlServer.xml
+F:\Asif\Education_Sln\Education.Infrastructure\obj\Debug\Education.Infrastructure.dll
+F:\Asif\Education_Sln\Education.Infrastructure\obj\Debug\Education.Infrastructure.pdb

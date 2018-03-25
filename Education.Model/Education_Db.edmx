@@ -1,0 +1,238 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Education_DbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="StudentAttendance">
+          <Key>
+            <PropertyRef Name="AttendanceId" />
+          </Key>
+          <Property Name="AttendanceId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AttendanceStudentId" Type="int" Nullable="false" />
+          <Property Name="AttendanceDate" Type="datetime" Nullable="false" />
+          <Property Name="IsPresent" Type="bit" Nullable="false" />
+          <Property Name="Status" Type="int" Nullable="false" />
+          <Property Name="CreatedOn" Type="datetime" />
+          <Property Name="CreatedBy" Type="int" />
+          <Property Name="ModifiedOn" Type="datetime" />
+          <Property Name="ModifiedBy" Type="int" />
+        </EntityType>
+        <EntityType Name="StudentInformation">
+          <Key>
+            <PropertyRef Name="StudentId" />
+          </Key>
+          <Property Name="StudentId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="StudentCode" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="StudentName" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="FatherName" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="MotherName" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="DateOfBirth" Type="datetime" Nullable="false" />
+          <Property Name="RollNo" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Pic" Type="image" Nullable="false" />
+          <Property Name="Status" Type="int" Nullable="false" />
+          <Property Name="CreatedOn" Type="datetime" />
+          <Property Name="CreatedBy" Type="int" />
+          <Property Name="ModifiedOn" Type="datetime" />
+          <Property Name="ModifiedBy" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'Education_Db.dbo.StudentAttendanceView' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="StudentAttendanceView">
+          <Key>
+            <PropertyRef Name="AttendanceId" />
+            <PropertyRef Name="AttendanceStudentId" />
+            <PropertyRef Name="StudentCode" />
+            <PropertyRef Name="StudentName" />
+            <PropertyRef Name="AttendanceDate" />
+            <PropertyRef Name="IsPresent" />
+          </Key>
+          <Property Name="AttendanceId" Type="int" Nullable="false" />
+          <Property Name="AttendanceStudentId" Type="int" Nullable="false" />
+          <Property Name="StudentCode" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="StudentName" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="AttendanceDate" Type="datetime" Nullable="false" />
+          <Property Name="IsPresent" Type="bit" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_StudentAttendance_StudentInformation">
+          <End Role="StudentInformation" Type="Self.StudentInformation" Multiplicity="1" />
+          <End Role="StudentAttendance" Type="Self.StudentAttendance" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="StudentInformation">
+              <PropertyRef Name="StudentId" />
+            </Principal>
+            <Dependent Role="StudentAttendance">
+              <PropertyRef Name="AttendanceStudentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Education_DbModelStoreContainer">
+          <EntitySet Name="StudentAttendance" EntityType="Self.StudentAttendance" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="StudentInformation" EntityType="Self.StudentInformation" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="StudentAttendanceView" EntityType="Self.StudentAttendanceView" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [StudentAttendanceView].[AttendanceId] AS [AttendanceId], 
+    [StudentAttendanceView].[AttendanceStudentId] AS [AttendanceStudentId], 
+    [StudentAttendanceView].[StudentCode] AS [StudentCode], 
+    [StudentAttendanceView].[StudentName] AS [StudentName], 
+    [StudentAttendanceView].[AttendanceDate] AS [AttendanceDate], 
+    [StudentAttendanceView].[IsPresent] AS [IsPresent]
+    FROM [dbo].[StudentAttendanceView] AS [StudentAttendanceView]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_StudentAttendance_StudentInformation" Association="Self.FK_StudentAttendance_StudentInformation">
+            <End Role="StudentInformation" EntitySet="StudentInformation" />
+            <End Role="StudentAttendance" EntitySet="StudentAttendance" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Education_DbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="Education_DbEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="StudentAttendance" EntityType="Education_DbModel.StudentAttendance" />
+          <EntitySet Name="StudentInformation" EntityType="Education_DbModel.StudentInformation" />
+          <AssociationSet Name="FK_StudentAttendance_StudentInformation" Association="Education_DbModel.FK_StudentAttendance_StudentInformation">
+            <End Role="StudentInformation" EntitySet="StudentInformation" />
+            <End Role="StudentAttendance" EntitySet="StudentAttendance" />
+          </AssociationSet>
+          <EntitySet Name="StudentAttendanceView" EntityType="Education_DbModel.StudentAttendanceView" />
+        </EntityContainer>
+        <EntityType Name="StudentAttendance">
+          <Key>
+            <PropertyRef Name="AttendanceId" />
+          </Key>
+          <Property Name="AttendanceId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AttendanceStudentId" Type="Int32" Nullable="false" />
+          <Property Name="AttendanceDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="IsPresent" Type="Boolean" Nullable="false" />
+          <Property Name="Status" Type="Int32" Nullable="false" />
+          <Property Name="CreatedOn" Type="DateTime" Precision="3" />
+          <Property Name="CreatedBy" Type="Int32" />
+          <Property Name="ModifiedOn" Type="DateTime" Precision="3" />
+          <Property Name="ModifiedBy" Type="Int32" />
+          <NavigationProperty Name="StudentInformation" Relationship="Education_DbModel.FK_StudentAttendance_StudentInformation" FromRole="StudentAttendance" ToRole="StudentInformation" />
+        </EntityType>
+        <EntityType Name="StudentInformation">
+          <Key>
+            <PropertyRef Name="StudentId" />
+          </Key>
+          <Property Name="StudentId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="StudentCode" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="StudentName" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="FatherName" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="MotherName" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="DateOfBirth" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="RollNo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Pic" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
+          <Property Name="Status" Type="Int32" Nullable="false" />
+          <Property Name="CreatedOn" Type="DateTime" Precision="3" />
+          <Property Name="CreatedBy" Type="Int32" />
+          <Property Name="ModifiedOn" Type="DateTime" Precision="3" />
+          <Property Name="ModifiedBy" Type="Int32" />
+          <NavigationProperty Name="StudentAttendance" Relationship="Education_DbModel.FK_StudentAttendance_StudentInformation" FromRole="StudentInformation" ToRole="StudentAttendance" />
+        </EntityType>
+        <Association Name="FK_StudentAttendance_StudentInformation">
+          <End Type="Education_DbModel.StudentInformation" Role="StudentInformation" Multiplicity="1" />
+          <End Type="Education_DbModel.StudentAttendance" Role="StudentAttendance" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="StudentInformation">
+              <PropertyRef Name="StudentId" />
+            </Principal>
+            <Dependent Role="StudentAttendance">
+              <PropertyRef Name="AttendanceStudentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="StudentAttendanceView">
+          <Key>
+            <PropertyRef Name="AttendanceId" />
+            <PropertyRef Name="AttendanceStudentId" />
+            <PropertyRef Name="StudentCode" />
+            <PropertyRef Name="StudentName" />
+            <PropertyRef Name="AttendanceDate" />
+            <PropertyRef Name="IsPresent" />
+          </Key>
+          <Property Name="AttendanceId" Type="Int32" Nullable="false" />
+          <Property Name="AttendanceStudentId" Type="Int32" Nullable="false" />
+          <Property Name="StudentCode" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="StudentName" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="AttendanceDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="IsPresent" Type="Boolean" Nullable="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Education_DbModelStoreContainer" CdmEntityContainer="Education_DbEntities">
+          <EntitySetMapping Name="StudentAttendance">
+            <EntityTypeMapping TypeName="Education_DbModel.StudentAttendance">
+              <MappingFragment StoreEntitySet="StudentAttendance">
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="IsPresent" ColumnName="IsPresent" />
+                <ScalarProperty Name="AttendanceDate" ColumnName="AttendanceDate" />
+                <ScalarProperty Name="AttendanceStudentId" ColumnName="AttendanceStudentId" />
+                <ScalarProperty Name="AttendanceId" ColumnName="AttendanceId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="StudentInformation">
+            <EntityTypeMapping TypeName="Education_DbModel.StudentInformation">
+              <MappingFragment StoreEntitySet="StudentInformation">
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Pic" ColumnName="Pic" />
+                <ScalarProperty Name="RollNo" ColumnName="RollNo" />
+                <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+                <ScalarProperty Name="MotherName" ColumnName="MotherName" />
+                <ScalarProperty Name="FatherName" ColumnName="FatherName" />
+                <ScalarProperty Name="StudentName" ColumnName="StudentName" />
+                <ScalarProperty Name="StudentCode" ColumnName="StudentCode" />
+                <ScalarProperty Name="StudentId" ColumnName="StudentId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="StudentAttendanceView">
+            <EntityTypeMapping TypeName="Education_DbModel.StudentAttendanceView">
+              <MappingFragment StoreEntitySet="StudentAttendanceView">
+                <ScalarProperty Name="IsPresent" ColumnName="IsPresent" />
+                <ScalarProperty Name="AttendanceDate" ColumnName="AttendanceDate" />
+                <ScalarProperty Name="StudentName" ColumnName="StudentName" />
+                <ScalarProperty Name="StudentCode" ColumnName="StudentCode" />
+                <ScalarProperty Name="AttendanceStudentId" ColumnName="AttendanceStudentId" />
+                <ScalarProperty Name="AttendanceId" ColumnName="AttendanceId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

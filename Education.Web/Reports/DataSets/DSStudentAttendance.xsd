@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DSStudentAttendance" targetNamespace="http://tempuri.org/DSStudentAttendance.xsd" xmlns:mstns="http://tempuri.org/DSStudentAttendance.xsd" xmlns="http://tempuri.org/DSStudentAttendance.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Web.config" AppSettingsPropertyName="Education_DbConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="Education_DbConnectionString (Web.config)" ParameterPrefix="@" PropertyReference="AppConfig.System.Configuration.ConfigurationManager.0.ConnectionStrings.Education_DbConnectionString.ConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="StudentAttendanceViewTableAdapter" GeneratorDataComponentClassName="StudentAttendanceViewTableAdapter" Name="StudentAttendanceView" UserDataComponentName="StudentAttendanceViewTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="Education_DbConnectionString (Web.config)" DbObjectName="Education_Db.dbo.StudentAttendanceView" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT AttendanceId, AttendanceStudentId, StudentCode, StudentName, AttendanceDate, IsPresent FROM dbo.StudentAttendanceView</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="AttendanceId" DataSetColumn="AttendanceId" />
+              <Mapping SourceColumn="AttendanceStudentId" DataSetColumn="AttendanceStudentId" />
+              <Mapping SourceColumn="StudentCode" DataSetColumn="StudentCode" />
+              <Mapping SourceColumn="StudentName" DataSetColumn="StudentName" />
+              <Mapping SourceColumn="AttendanceDate" DataSetColumn="AttendanceDate" />
+              <Mapping SourceColumn="IsPresent" DataSetColumn="IsPresent" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DSStudentAttendance" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DSStudentAttendance" msprop:Generator_UserDSName="DSStudentAttendance">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="StudentAttendanceView" msprop:Generator_TableClassName="StudentAttendanceViewDataTable" msprop:Generator_TableVarName="tableStudentAttendanceView" msprop:Generator_TablePropName="StudentAttendanceView" msprop:Generator_RowDeletingName="StudentAttendanceViewRowDeleting" msprop:Generator_RowChangingName="StudentAttendanceViewRowChanging" msprop:Generator_RowEvHandlerName="StudentAttendanceViewRowChangeEventHandler" msprop:Generator_RowDeletedName="StudentAttendanceViewRowDeleted" msprop:Generator_UserTableName="StudentAttendanceView" msprop:Generator_RowChangedName="StudentAttendanceViewRowChanged" msprop:Generator_RowEvArgName="StudentAttendanceViewRowChangeEvent" msprop:Generator_RowClassName="StudentAttendanceViewRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="AttendanceId" msprop:Generator_ColumnVarNameInTable="columnAttendanceId" msprop:Generator_ColumnPropNameInRow="AttendanceId" msprop:Generator_ColumnPropNameInTable="AttendanceIdColumn" msprop:Generator_UserColumnName="AttendanceId" type="xs:int" />
+              <xs:element name="AttendanceStudentId" msprop:Generator_ColumnVarNameInTable="columnAttendanceStudentId" msprop:Generator_ColumnPropNameInRow="AttendanceStudentId" msprop:Generator_ColumnPropNameInTable="AttendanceStudentIdColumn" msprop:Generator_UserColumnName="AttendanceStudentId" type="xs:int" />
+              <xs:element name="StudentCode" msprop:Generator_ColumnVarNameInTable="columnStudentCode" msprop:Generator_ColumnPropNameInRow="StudentCode" msprop:Generator_ColumnPropNameInTable="StudentCodeColumn" msprop:Generator_UserColumnName="StudentCode">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="StudentName" msprop:Generator_ColumnVarNameInTable="columnStudentName" msprop:Generator_ColumnPropNameInRow="StudentName" msprop:Generator_ColumnPropNameInTable="StudentNameColumn" msprop:Generator_UserColumnName="StudentName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="150" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="AttendanceDate" msprop:Generator_ColumnVarNameInTable="columnAttendanceDate" msprop:Generator_ColumnPropNameInRow="AttendanceDate" msprop:Generator_ColumnPropNameInTable="AttendanceDateColumn" msprop:Generator_UserColumnName="AttendanceDate" type="xs:dateTime" />
+              <xs:element name="IsPresent" msprop:Generator_ColumnVarNameInTable="columnIsPresent" msprop:Generator_ColumnPropNameInRow="IsPresent" msprop:Generator_ColumnPropNameInTable="IsPresentColumn" msprop:Generator_UserColumnName="IsPresent" type="xs:boolean" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:StudentAttendanceView" />
+      <xs:field xpath="mstns:AttendanceId" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

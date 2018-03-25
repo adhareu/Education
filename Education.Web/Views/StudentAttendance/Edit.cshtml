@@ -1,0 +1,80 @@
+﻿
+@{
+    ViewBag.Title = "Create";
+
+}
+
+<div class="row match-height" ng-controller="StudentAttendanceEditController">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="card-title" id="basic-layout-form-center">Student Attendance</h4>
+                <a class="heading-elements-toggle"><i class="icon-ellipsis font-medium-3"></i></a>
+                <div class="heading-elements">
+                    <ul class="list-inline mb-0">
+
+                        <li><a data-action="reload"><i class="icon-reload"></i></a></li>
+                        <li><a data-action="expand"><i class="icon-expand2"></i></a></li>
+
+                    </ul>
+                </div>
+            </div>
+            <div class="card-body collapse in">
+                <div class="card-block">
+                    <div class="row">
+                        <div class="col-md-6">
+
+
+
+
+                            <div class="form-body">
+                                <div class="form-group" ng-class="{ 'has-error': dForm.StudentCode.$touched && dForm.StudentCode.$invalid }">
+                                    <label for="StudentCode">Student ID</label>
+                                    <select class="form-control" ng-model="studentAttendance.AttendanceStudentId">
+                                        <option ng-repeat="x in Students" value="{{x.StudentId}}">{{x.StudentName}}</option>
+                                    </select>
+                                    <div class="help-block" ng-messages="dForm.StudentCode.$error" ng-if="dForm.StudentCode.$touched">
+                                        <div ng-message="required" class="text-danger">Enter Student ID</div>
+
+                                        <div ng-message="maxlength" class="text-warning">Student ID must not exceed 50 characters</div>
+                                    </div>
+                                </div>
+
+
+                                <div class="form-group" ng-class="{ 'has-error': dForm.AttendanceDate.$touched && dForm.AttendanceDate.$invalid }">
+                                    <label for="AttendanceDate">Attendance Date</label>
+                                    <input id="AttendanceDate" class="form-control datepicker" type="text" placeholder="Attendance Date" name="AttendanceDate" ng-model="studentAttendance.AttendanceDate" data-date-format="mm/dd/yyyy" date='MM/dd/yyyy' required />
+                                    <div class="help-block" ng-messages="dForm.AttendanceDate.$error" ng-if="dForm.AttendanceDate.$touched">
+                                        <div ng-message="required" class="text-danger">Enter Attendance Date</div>
+
+
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="IsPresent">
+                                        <input id="IsPresent" name="IsPresent" class="form-control" ng-model="studentAttendance.IsPresent" type="checkbox" /> Is Present?
+                                    </label>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+                        <div class="col-md-6">
+
+                        </div>
+                    </div>
+                    <div class="form-actions">
+
+                        <button type="submit" class="btn btn-primary" ng-disabled="dForm.$invalid" ng-click="UpdateStudentAttendance(studentAttendance)">
+                            <i class="icon-check2"></i> Save
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

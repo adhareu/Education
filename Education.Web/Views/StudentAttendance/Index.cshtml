@@ -1,0 +1,57 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+
+}
+
+<div class="row match-height" ng-controller="StudentAttendanceController">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="card-title" id="basic-layout-form-center">Attendance List</h4>
+                <a class="heading-elements-toggle"><i class="icon-ellipsis font-medium-3"></i></a>
+                <div class="heading-elements">
+                    <ul class="list-inline mb-0">
+
+                        <li><a data-action="reload"><i class="icon-reload"></i></a></li>
+                        <li><a data-action="expand"><i class="icon-expand2"></i></a></li>
+
+                    </ul>
+                </div>
+            </div>
+            <div class="card-body collapse in">
+                <div class="card-block">
+                    <a class="btn btn-success" href="~/StudentAttendance/Create">Add Student Attendance</a>
+                    <br /><br />
+                    <a href="~/StudentAttendance/DetailsReport" class="btn btn-primary" target="_blank">Student Attendance Report</a>
+                    <table datatable="ng" dt-options="StudentAttendanceController.dtOptions" dt-column-defs="StudentAttendanceController.dtColumnDefs" class="table table-striped table-bordered table-hover">
+                        <thead>
+                            <tr>
+                                <th>Student ID</th>
+                                <th>Name</th>
+                                <th>Attendance Date</th>
+                                <th>Is Present</th>
+                               
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="studentAttendance in StudentAttendances">
+                                <td>{{ studentAttendance.StudentInformation.StudentCode }}</td>
+                                <td>{{ studentAttendance.StudentInformation.StudentName }}</td>
+                                <td>{{ studentAttendance.AttendanceDate|date:  "dd/MM/y"  }}</td>
+                                <td>{{ studentAttendance.IsPresent }}</td>
+                           
+                                
+                                <td><a class="btn btn-sm btn-success" href="~/StudentInformation/Edit?id={{studentAttendance.AttendanceId}}">Edit</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

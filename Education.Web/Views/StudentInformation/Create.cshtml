@@ -1,0 +1,160 @@
+﻿
+@{
+    ViewBag.Title = "Create";
+
+}
+
+<div class="row match-height" ng-controller="StudentInformationController">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="card-title" id="basic-layout-form-center">Student Create</h4>
+                <a class="heading-elements-toggle"><i class="icon-ellipsis font-medium-3"></i></a>
+                <div class="heading-elements">
+                    <ul class="list-inline mb-0">
+
+                        <li><a data-action="reload"><i class="icon-reload"></i></a></li>
+                        <li><a data-action="expand"><i class="icon-expand2"></i></a></li>
+
+                    </ul>
+                </div>
+            </div>
+            <div class="card-body collapse in">
+                <div class="card-block">
+                    <div class="row">
+                        <div class="col-md-6">
+
+
+
+
+                            <div class="form-body">
+                                <div class="form-group" ng-class="{ 'has-error': dForm.StudentCode.$touched && dForm.StudentCode.$invalid }">
+                                    <label for="StudentCode">Student ID</label>
+                                    <input id="StudentCode" class="form-control" placeholder="Student ID" name="StudentCode" ng-model="studentInformation.StudentCode" ng-maxlength="50" required />
+                                    <div class="help-block" ng-messages="dForm.StudentCode.$error" ng-if="dForm.StudentCode.$touched">
+                                        <div ng-message="required" class="text-danger">Enter Student ID</div>
+
+                                        <div ng-message="maxlength" class="text-warning">Student ID must not exceed 50 characters</div>
+                                    </div>
+                                </div>
+                                <div class="form-group" ng-class="{ 'has-danger': dForm.StudentName.$touched && dForm.StudentName.$invalid }">
+                                    <label for="StudentName">Name</label>
+                                    <input type="text" id="StudentName" class="form-control" placeholder="Name" name="Name" ng-model="studentInformation.StudentName" ng-maxlength="150" required />
+                                    <div class="help-block" ng-messages="dForm.StudentName.$error" ng-if="dForm.StudentName.$touched">
+                                        <div ng-message="required" class="danger text-muted">Enter Student Name</div>
+
+                                        <div ng-message="maxlength" class="warning text-muted">Student Name must not exceed 150 characters</div>
+
+                                    </div>
+                                </div>
+                                <div class="form-group" ng-class="{ 'has-error': dForm.FatherName.$touched && dForm.FatherName.$invalid }">
+                                    <label for="FatherName">Father Name</label>
+                                    <input id="FatherName" class="form-control" placeholder="Father Name" name="FatherName" ng-model="studentInformation.FatherName" ng-maxlength="150" required />
+                                    <div class="help-block" ng-messages="dForm.FatherName.$error" ng-if="dForm.FatherName.$touched">
+                                        <div ng-message="required" class="text-danger">Enter Father Name </div>
+
+                                        <div ng-message="maxlength" class="text-warning">Father Name must not exceed 150 characters</div>
+                                    </div>
+                                </div>
+                                <div class="form-group" ng-class="{ 'has-error': dForm.MotherName.$touched && dForm.MotherName.$invalid }">
+                                    <label for="MotherName">Mother Name</label>
+                                    <input id="MotherName" class="form-control" placeholder="Mother Name" name="MotherName" ng-model="studentInformation.MotherName" ng-maxlength="150" required />
+                                    <div class="help-block" ng-messages="dForm.MotherName.$error" ng-if="dForm.MotherName.$touched">
+                                        <div ng-message="required" class="text-danger">Enter Mother Name </div>
+
+                                        <div ng-message="maxlength" class="text-warning">Mother Name must not exceed 150 characters</div>
+                                    </div>
+                                </div>
+                                <div class="form-group" ng-class="{ 'has-error': dForm.DateOfBirth.$touched && dForm.DateOfBirth.$invalid }">
+                                    <label for="DateOfBirth">Date Of Birth</label>
+                                    <input id="DateOfBirth" class="form-control datepicker" type="text" placeholder="Date Of Birth" name="DateOfBirth" ng-model="studentInformation.DateOfBirth" data-date-format="mm/dd/yyyy" date='MM/dd/yyyy' required />
+                                    <div class="help-block" ng-messages="dForm.DateOfBirth.$error" ng-if="dForm.DateOfBirth.$touched">
+                                        <div ng-message="required" class="text-danger">Enter Date Of Birth</div>
+
+
+                                    </div>
+                                </div>
+                                <div class="form-group" ng-class="{ 'has-error': dForm.RollNo.$touched && dForm.RollNo.$invalid }">
+                                    <label for="RollNo">Roll No</label>
+                                    <input id="RollNo" class="form-control" placeholder="Roll No" name="RollNo" ng-model="studentInformation.RollNo" ng-maxlength="50" required />
+                                    <div class="help-block" ng-messages="dForm.RollNo.$error" ng-if="dForm.RollNo.$touched">
+                                        <div ng-message="required" class="text-danger">Enter Roll No</div>
+
+                                        <div ng-message="maxlength" class="text-warning">Roll No must not exceed 50 characters</div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-body">
+                                <div class="form-group">
+                                    <label for="exampleInputFile">Student image:</label>
+                                    <br>
+                                    <img id="preview-img" src="~/images/portrait/default.jpg" width="122" height="121" style="border:1px solid silver" >
+                                    <br />
+                                    <input type="file" name="file" id="file" ng-model="myfile">
+                                </div>
+                                </div>
+                            </div>
+                    </div>
+                    <div class="form-actions">
+
+                        <button type="submit" class="btn btn-primary" ng-disabled="dForm.$invalid" ng-click="AddStudentInformation(studentInformation)">
+                            <i class="icon-check2"></i> Save
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    function selectImage(e) {
+      
+        $('#preview-img').attr('src', e.target.result);
+      
+    }
+    $(document).ready(function (e) {
+
+        var maxsize = 500 * 1024; // 500 KB
+
+       
+
+       
+        $('#file').change(function () {
+
+           
+
+            var file = this.files[0];
+            var match = ["image/jpeg", "image/png", "image/jpg"];
+
+            if (!((file.type == match[0]) || (file.type == match[1]) || (file.type == match[2]))) {
+             
+
+               alert('Unvalid image format. Allowed formats: JPG, JPEG, PNG.');
+
+                return false;
+            }
+
+            if (file.size > maxsize) {
+           
+
+                alert('The size of image you are attempting to upload is ' + (file.size / 1024).toFixed(2) + ' KB, maximum size allowed is ' + (maxsize / 1024).toFixed(2) + ' KB');
+
+                return false;
+            }
+
+            
+
+            var reader = new FileReader();
+            reader.onload = selectImage;
+            reader.readAsDataURL(this.files[0]);
+
+        });
+
+    });
+</script>
+

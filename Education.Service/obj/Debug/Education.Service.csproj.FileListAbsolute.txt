@@ -1,0 +1,39 @@
+H:\Project Coll\Asset_Sln\Asset.Service\bin\Debug\Education.Service.dll
+H:\Project Coll\Asset_Sln\Asset.Service\bin\Debug\Education.Service.pdb
+H:\Project Coll\Asset_Sln\Asset.Service\bin\Debug\Education.Infrastructure.dll
+H:\Project Coll\Asset_Sln\Asset.Service\bin\Debug\Education.Model.dll
+H:\Project Coll\Asset_Sln\Asset.Service\bin\Debug\Education.Repository.dll
+H:\Project Coll\Asset_Sln\Asset.Service\bin\Debug\EntityFramework.dll
+H:\Project Coll\Asset_Sln\Asset.Service\bin\Debug\Education.Infrastructure.pdb
+H:\Project Coll\Asset_Sln\Asset.Service\bin\Debug\Education.Model.pdb
+H:\Project Coll\Asset_Sln\Asset.Service\bin\Debug\Education.Repository.pdb
+H:\Project Coll\Asset_Sln\Asset.Service\bin\Debug\EntityFramework.xml
+H:\Project Coll\Asset_Sln\Asset.Service\obj\Debug\Education.Service.csprojResolveAssemblyReference.cache
+H:\Project Coll\Asset_Sln\Asset.Service\obj\Debug\Education.Service.dll
+H:\Project Coll\Asset_Sln\Asset.Service\obj\Debug\Education.Service.pdb
+H:\Project Coll\Education_Sln\Education.Service\bin\Debug\Education.Service.dll
+H:\Project Coll\Education_Sln\Education.Service\bin\Debug\Education.Service.pdb
+H:\Project Coll\Education_Sln\Education.Service\bin\Debug\Education.Infrastructure.dll
+H:\Project Coll\Education_Sln\Education.Service\bin\Debug\Education.Model.dll
+H:\Project Coll\Education_Sln\Education.Service\bin\Debug\Education.Repository.dll
+H:\Project Coll\Education_Sln\Education.Service\bin\Debug\EntityFramework.dll
+H:\Project Coll\Education_Sln\Education.Service\bin\Debug\Education.Infrastructure.pdb
+H:\Project Coll\Education_Sln\Education.Service\bin\Debug\Education.Model.pdb
+H:\Project Coll\Education_Sln\Education.Service\bin\Debug\Education.Repository.pdb
+H:\Project Coll\Education_Sln\Education.Service\bin\Debug\EntityFramework.xml
+H:\Project Coll\Education_Sln\Education.Service\obj\Debug\Education.Service.csprojResolveAssemblyReference.cache
+H:\Project Coll\Education_Sln\Education.Service\obj\Debug\Education.Service.dll
+H:\Project Coll\Education_Sln\Education.Service\obj\Debug\Education.Service.pdb
+F:\Asif\Education_Sln\Education.Service\bin\Debug\Education.Service.dll
+F:\Asif\Education_Sln\Education.Service\bin\Debug\Education.Service.pdb
+F:\Asif\Education_Sln\Education.Service\bin\Debug\Education.Infrastructure.dll
+F:\Asif\Education_Sln\Education.Service\bin\Debug\Education.Model.dll
+F:\Asif\Education_Sln\Education.Service\bin\Debug\Education.Repository.dll
+F:\Asif\Education_Sln\Education.Service\bin\Debug\EntityFramework.dll
+F:\Asif\Education_Sln\Education.Service\bin\Debug\Education.Infrastructure.pdb
+F:\Asif\Education_Sln\Education.Service\bin\Debug\Education.Model.pdb
+F:\Asif\Education_Sln\Education.Service\bin\Debug\Education.Repository.pdb
+F:\Asif\Education_Sln\Education.Service\bin\Debug\EntityFramework.xml
+F:\Asif\Education_Sln\Education.Service\obj\Debug\Education.Service.csprojResolveAssemblyReference.cache
+F:\Asif\Education_Sln\Education.Service\obj\Debug\Education.Service.dll
+F:\Asif\Education_Sln\Education.Service\obj\Debug\Education.Service.pdb
